@@ -50,8 +50,8 @@ const StakePage = () => {
           padding: "0 1.6rem",
         }}
       >
-        <Heading>Your staking account</Heading>
-        <Text>Below you can stake, unstake and collect rewards.</Text>
+        <Heading>Your MekaMounts OG staking account</Heading>
+        <Text>Below you can stake, unstake and collect $MEKA.</Text>
 
         {!publicKey ? (
           /** Render nothing if there is no wallet connected. */
@@ -70,7 +70,7 @@ const StakePage = () => {
           //     margin: "3.2rem 0"
           //   }}
           // />
-          <Text mt="1.6rem">Farm ID is not configured.</Text>
+          <Text mt="1.6rem">Staking MKM-ID is not configured.</Text>
         ) : /** If there is farmerAccount variable, but no address, it means account isn't initialized */
         farmerAccount && !farmerAccount?.identity ? (
           <Button
@@ -79,7 +79,7 @@ const StakePage = () => {
             }}
             onClick={handleInitStakingButtonClick}
           >
-            Init staking account
+            Init MKM-Staking account
           </Button>
         ) : (
           <>
@@ -104,21 +104,21 @@ const StakePage = () => {
                       sx={{
                         maxHeight: "2.4rem",
                       }}
-                      src="images/gemtransparent.gif"
+                      src="images/gemtransparent.png"
                     />
                     <Text>
-                      NFTs staked:&nbsp;
+                    MekaMounts staked:&nbsp;
                       {farmerAccount?.gemsStaked.toNumber()}
                     </Text>
                   </Flex>
-                  <Text
+                  {/*  <Text
                     sx={{
                       textAlign: "center",
                     }}
                   >
                     Vault state: <b>{isLocked ? "locked" : "unlocked"}</b>
                     <br />
-                  </Text>
+                  </Text> */}
                   <Text
                     sx={{
                       textAlign: "center",
@@ -214,8 +214,8 @@ const StakePage = () => {
               }}
             >
               <TabList>
-                <Tab>Your wallet</Tab>
-                <Tab>Your vault</Tab>
+                <Tab>Your Wallet</Tab>
+                <Tab>Your Staking</Tab>
               </TabList>
 
               <TabPanel>
@@ -279,7 +279,7 @@ const StakePage = () => {
                           }}
                           variant="small"
                         >
-                          Select NFTs to move them to your Vault.
+                          Select MekaMounts to move them to your Staking.
                         </Text>
                       ) : null}
                       <Text>
@@ -291,7 +291,7 @@ const StakePage = () => {
                       : null} */}
                         {selectedWalletItems?.length && !isLocked ? (
                           <Button onClick={handleMoveToVaultButtonClick}>
-                            Deposit selected
+                             move selected MekaMounts
                           </Button>
                         ) : null}
                       </Text>
@@ -304,7 +304,7 @@ const StakePage = () => {
                         alignSelf: "stretch",
                       }}
                     >
-                      <Text>There are no NFTs on your wallet.</Text>
+                      <Text>There are no MekaMounts on your wallet.</Text>
                     </Flex>
                   )
                 ) : /** No walletNFTs and public key, means it is loading */
@@ -398,7 +398,7 @@ const StakePage = () => {
                               }}
                               variant="small"
                             >
-                              Select NFTs to withdraw them to your wallet.
+                             Select MekaMounts to withdraw them to your wallet.
                             </Text>
                           ) : null}
 
@@ -424,7 +424,7 @@ const StakePage = () => {
                             alignSelf: "stretch",
                           }}
                         >
-                          <Text>There are no NFTs on your vault.</Text>
+                          <Text>There are no MekaMounts on your Staking account.</Text>
                         </Flex>
                       )
                     ) : /** No vaultNFTs and public key, means it is loading */
