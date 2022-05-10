@@ -135,8 +135,6 @@ const Header = ({ farmId, setFarmId }: Props) => {
                 onChange={(e) => setFarmId(e.target.value)}
               />
             )}
-
-
             <WalletManager />
           </Flex>
           <Button
